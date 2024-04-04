@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+
+}
+.cube{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+.side{
+    border: 5px solid #fff;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+/*Вытягиваем переднюю сторону на 1/2 размера куба*/
+.front{
+    transform: translateZ(150px);
+}
+/*Двигаем заднюю сторону на 1/2 размера куба и поворачивам на 180град(что бы правильно читалась надпись*/
+.back{
+    transform: rotateY(180deg) translateZ(150px);
+}
+/*Разворачиваем левую сторону по осиУ на -90 град и придвигаем к передней части*/
+.left{
+    transform: rotateY(-90deg) translateZ(150px);
+}
+/*Разворачиваем правую сторону по осиУ на 90 град и придвигаем к передней части*/
+.right{
+    transform: rotateY(90deg) translateZ(150px);
+}
+/*Разворачиваем верхнюю часть по осиХ на 90 град и придвигаем к передней части*/
+.top{
+    transform: rotateX(90deg) translateZ(150px);
+}
+/*Разворачиваем нижнюю часть по осиХ на -90 град и придвигаем к передней части*/
+.bottom{
+    transform: rotateX(-90deg) translateZ(150px);
+}
